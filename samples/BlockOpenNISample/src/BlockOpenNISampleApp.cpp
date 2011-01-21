@@ -139,8 +139,8 @@ public:	// Members
 void BlockOpenNISampleAppApp::setup()
 {
 	_manager = V::OpenNIDeviceManager::InstancePtr();
-	_device0 = _manager->createDevice( "data/configIR.xml" );
-	//_device0 = _manager->createDevice( V::NODE_TYPE_IR | V::NODE_TYPE_DEPTH );	// Create manually.
+	//_device0 = _manager->createDevice( "data/configIR.xml" );
+	_device0 = _manager->createDevice( V::NODE_TYPE_IR | V::NODE_TYPE_DEPTH);	// Create manually.
 	if( !_device0 ) 
 	{
 		DEBUG_MESSAGE( "(App)  Couldn't init device0\n" );

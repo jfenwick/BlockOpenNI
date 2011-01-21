@@ -25,10 +25,10 @@
 #include <memory>
 #else
 #include <boost/shared_ptr.hpp>
-namespace std 
-{
-	using boost::shared_ptr; // future-proof shared_ptr by putting it into std::
-}
+//namespace std 
+//{
+//	using boost::shared_ptr; // future-proof shared_ptr by putting it into std::
+//}
 #endif
 #include <boost/noncopyable.hpp>
 #include <boost/thread/mutex.hpp>
