@@ -139,12 +139,14 @@ public:	// Members
 void BlockOpenNISampleAppApp::setup()
 {
 	_manager = V::OpenNIDeviceManager::InstancePtr();
-	//_device0 = _manager->createDevice( "data/configIR.xml" );
-	_device0 = _manager->createDevice( V::NODE_TYPE_IR | V::NODE_TYPE_DEPTH);	// Create manually.
+	//_device0 = _manager->createDevice( loadResource( "configIR.xml", 0, NULL) );
+	//_device0 = _manager->createDevice( getResourcePath("ofxopenni_config.xml" ) );
+	_device0 = _manager->createDevice( getResourcePath("configIR.xml" ), true );
+	//_device0 = _manager->createDevice( V::NODE_TYPE_IR | V::NODE_TYPE_DEPTH);	// Create manually.
 	if( !_device0 ) 
 	{
 		DEBUG_MESSAGE( "(App)  Couldn't init device0\n" );
-		exit( 0 );
+		//exit( 0 );
 	}
 	_device0->setPrimaryBuffer( V::NODE_TYPE_DEPTH );
 	_manager->start();
